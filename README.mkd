@@ -11,10 +11,10 @@ Import `nixos.nix` as a module:
 ```nix
 imports = [
     (let src = fetchGit {
-          url = "https://github.com/bgamari/zen-workaround.nix";
-          rev = "...";
-        };
-     in ${src}/nixos.nix)
+           url = "https://github.com/bgamari/zen-workaround.nix";
+           rev = "...";
+         };
+     in import "${src}/nixos.nix")
   ]
 ```
 

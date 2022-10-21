@@ -1,9 +1,11 @@
 # NixOS module
 
-{ nixpkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  boot.extraModulePackages = [ (nixpkgs.callPackage ./. {}) ];
+  boot.extraModulePackages = [
+    (pkgs.callPackage ./. { nixpkgs = pkgs; kernel = config.boot.kernelPackages.kernel; })
+  ];
   boot.kernelModules = [ "zen_workaround" ];
 }
 
