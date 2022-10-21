@@ -1,0 +1,20 @@
+# Zen `rr` workaround
+
+Zen workaround for `rr` compatibility packaged for NixOS.
+
+See https://github.com/rr-debugger/rr/wiki/Zen.
+
+## Usage
+
+Import `nixos.nix` as a module:
+
+```nix
+imports = [
+    (let src = fetchGit {
+          url = "https://github.com/bgamari/zen-workaround.nix";
+          rev = "...";
+        };
+     in ${src}/nixos.nix)
+  ]
+```
+
