@@ -2,7 +2,7 @@
   description = "AMD Zen rr workaround kernel module";
   outputs = { self }: {
     nixosModules = {
-      default = import ./nixos.nix
+      default = import ./nixos.nix;
     };
   };
 }
